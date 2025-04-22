@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Clock</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: black;
+      color: rgb(27, 246, 7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    /* Neon flicker effect */
+    @keyframes neonFlicker {
+      0% {
+        text-shadow: 0 0 10px rgb(27, 246, 7), 0 0 20px rgb(27, 246, 7), 0 0 30px rgb(27, 246, 7);
+      }
+      10% {
+        text-shadow: none;
+      }
+      20% {
+        text-shadow: 0 0 10px rgb(27, 246, 7), 0 0 20px rgb(27, 246, 7), 0 0 30px rgb(27, 246, 7);
+      }
+      30% {
+        text-shadow: none;
+      }
+      40% {
+        text-shadow: 0 0 10px rgb(27, 246, 7), 0 0 20px rgb(27, 246, 7), 0 0 30px rgb(27, 246, 7);
+      }
+      100% {
+        text-shadow: none;
+      }
+    }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+        transform: scale(0.9);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+      }
+    }
+
+    #clock {
+      animation: neonFlicker 1.5s infinite alternate, pulse 2s infinite ease-in-out;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid rgb(27, 246, 7); /* Adds the cursor effect */
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">Loading...</div>
+
+  <script src="terminalclock.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Clock</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: black;
+      color: rgb(27, 246, 7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 3rem;
+    }
+
+    /* Pulse animation for "Loading..." text */
+    @keyframes glitch {
+      0%   { opacity: 0.3; }
+      50%  { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    #clock {
+      animation: glitch 2s infinite; /* Apply the pulse animation */
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">Loading...</div>
+
+  <script src="terminalclock.js"></script>
+</body>
+</html> -->
